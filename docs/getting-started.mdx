@@ -1,0 +1,118 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+import OnlineJsDocContent from './getting-started-variants/online-javascript.mdx';
+import OnlineReactDocContent from './getting-started-variants/online-react.mdx';
+import OnlineVueDocContent from './getting-started-variants/online-vue.mdx';
+
+import OfflineJsDocContent from './getting-started-variants/offline-javascript.mdx';
+import OfflineReactDocContent from './getting-started-variants/offline-react.mdx';
+import OfflineVueDocContent from './getting-started-variants/offline-vue.mdx';
+
+# Быстрый старт
+* [Online-график](#online-график)
+* [Offline-график](#offline-график)
+* [Pauseable-график](#pauseable-график)
+
+В данной статье демонстрируется процесс создания простейшего [примера](/examples/simple) online-графика.
+В данном статье используется сборщик [Vite](https://vitejs.dev).
+
+## Создание проекта
+Для создания vite-проекта потребуется выполнить следующие команды в CLI.
+<Tabs>
+  <TabItem value='javascript' label="JavaScript" default>
+    ```sh
+    $ npm create vite@latest my-app --template vanilla my-app
+    $ cd my-app
+
+    $ npm install
+    $ npm run dev
+    ```
+  </TabItem>
+  <TabItem value='react' label="React">
+    ```sh
+    $ npm create vite@latest my-app --template react my-app
+    $ cd my-app
+
+    $ npm install
+    $ npm run dev
+    ```
+  </TabItem>
+  <TabItem value='vue' label="Vue">
+    ```sh
+    $ npm create vite@latest my-app --template vue my-app
+    $ cd my-app
+
+    $ npm install
+    $ npm run dev
+    ```
+  </TabItem>
+</Tabs>
+
+### Установка библиотеки
+Для того, чтобы установить библиотеку, необходимо выполнить следующую команду в CLI.
+```sh
+$ npm install git@github.com:IncartDev/WebGraphicVisualizator.git#v0.1.0
+```
+:::info
+Подробнее об установке в разделе [УСТАНОВКА](/install)
+:::
+
+## Online-график
+
+### Конфигурация графика
+Для настройки отображения графика необходимо создать файл конфигурации.
+
+:::info
+Подробнее о файле конфигурации в разделе [Файл конфигурации](fundamentals/config-file)
+:::
+
+В директории с исходным кодом проекта необходимо создать файл `VisualSettings.json`. Далее, необходимо [скопировать](/examples/simple) конфигурацию графика в файл `VisualSettings.json`.
+
+### Настройка генератора сигналов
+Online-график &mdash; график, отображающий сигнал, изменяющийся в реальном времени. Для отображения будет использован демонстрационный сигнал, генерирующийся в реальном времени
+с помощью генератора сигнала. Генератор сигнала также требуется сконфигурировать в отдельном файле конфигурации. В данном примере не рассматривается вариант создания конфигурации с нуля.
+
+Для настройки генератора сигналов в директории с исходным кодом проекта необходимо создать файл `generator.json`. Далее, необходимо [скопировать](/examples/simple) конфигурацию генератора сигналов в файл `generator.josn`.
+
+### Инициализация графика
+<Tabs>
+  <TabItem value="javascript" label="JavaScript" default>
+    <OnlineJsDocContent/> 
+  </TabItem>
+  <TabItem value="react" label="React">
+    <OnlineReactDocContent/>
+  </TabItem>
+  <TabItem value="vue" label="Vue">
+    <OnlineVueDocContent/>
+  </TabItem>
+</Tabs>
+
+## Offline-график
+
+### Конфигурация графика
+Для настройки отображения графика необходимо создать файл конфигурации.
+
+:::info
+Подробнее о файле конфигурации в разделе [Файл конфигурации](fundamentals/config-file)
+:::
+
+В директории с исходным кодом проекта необходимо создать файл `VisualSettings.json`. Далее, необходимо [скопировать](/examples/offline_simplefundamentals/config-file) конфигурацию графика в файл `VisualSettings.json`.
+
+### Инициализация графика
+<Tabs>
+  <TabItem value="javascript" label="JavaScript" default>
+    <OfflineJsDocContent/>
+  </TabItem>
+  <TabItem value="react" label="React">
+    <OfflineReactDocContent/>
+  </TabItem>
+  <TabItem value="vue" label="Vue">
+    <OfflineVueDocContent/>
+  </TabItem>
+</Tabs>
+
+## Pauseable-график
+
+> Статья в разработке
